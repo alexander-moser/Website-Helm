@@ -16,4 +16,4 @@ spec:
         - name: angular-app
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           ports:
-            - containerPort: 80
+            - containerPort: 4000
