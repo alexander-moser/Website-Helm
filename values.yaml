@@ -35,7 +35,7 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 80
+  port: 3080
 
 autoscaling:
   enabled: false
