@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: angular-app
-          image: ghcr.io/alexander-moser/website:main
+          image: ghcr.io/alexander-moser/website
           ports:
             - containerPort: 80
