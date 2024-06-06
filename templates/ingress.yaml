@@ -1,7 +1,7 @@
-apiVersion: extensions/v1beta1
+apiVersion: extensions/v1
 kind: Ingress
 metadata:
-  name: myingress
+  name: ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /$2
     nginx.ingress.kubernetes.io/use-regex: "true"
@@ -11,9 +11,13 @@ spec:
         paths:
           - path: /
             backend:
-              serviceName: angular-app
-              servicePort: 80
+              service:
+                name: angular-app
+                port:
+                  number: 80
           - path: /test/(/|$)(.*)
             backend:
-              serviceName: angular-app
-              servicePort: 80
+              service:
+                name: angular-app
+                port:
+                  number: 80
