@@ -15,4 +15,6 @@ spec:
       containers:
         - name: angular-app
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+      automountServiceAccountToken: false
+
 
