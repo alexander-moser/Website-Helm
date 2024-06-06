@@ -1,12 +1,12 @@
-apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: angular-deployment
+  name: angular-app
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: angular-app
-  replicas: 5 # tells deployment to run 2 pods matching the template
   template:
     metadata:
       labels:
@@ -15,20 +15,6 @@ spec:
       containers:
         - name: angular-app
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          ports:
-            - containerPort: 80
----
-# https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service
-kind: Service
-apiVersion: v1
-metadata:
-  name: angular-service
-spec:
-  selector:
-    app: angular
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 80
-      nodePort: 31000
-  type: NodePort
+      automountServiceAccountToken: false
+
+
