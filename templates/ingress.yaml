@@ -1,18 +1,18 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress
+  name: kubernetes-ingress
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: nginx
 spec:
-  ingressClassName: nginx
   rules:
-    - http:
+    - host: "almos.io"
+      http:
         paths:
-          - path: /
-            pathType: Prefix
+          - pathType: Prefix
+            path: "/"
             backend:
               service:
                 name: angular-app
                 port:
-                  number: 4200
+                  number: 80
