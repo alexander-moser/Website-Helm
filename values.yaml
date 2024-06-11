@@ -54,10 +54,10 @@ ingress:
       paths:
         - path: /
           pathType: Prefix
-  tls:
-    - hosts:
-        - almos.io
-      secretName: hello-kubernetes-tls
+  tls: {}
+#    - hosts:
+ #       - almos.io
+  #    secretName: hello-kubernetes-tls
 
 resources: {}
 
