@@ -15,8 +15,6 @@ spec:
       containers:
         - name: angular-app
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          ports:
-            - containerPort: 4200
       automountServiceAccountToken: false
 
 
