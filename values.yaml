@@ -51,7 +51,7 @@ ingress:
   hosts:
     - host: "www.almos.io"
       paths:
-        - path: /
+        - path: "/"
           pathType: Prefix
   tls: {}
 
