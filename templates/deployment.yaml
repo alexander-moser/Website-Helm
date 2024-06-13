@@ -16,5 +16,7 @@ spec:
         - name: angular-app
           image: "ghcr.io/alexander-moser/website:main"
           ports:
-            - containerPort: 4200
+            - name: http
+              containerPort: 4200
+              protocol: TCP
       automountServiceAccountToken: false
