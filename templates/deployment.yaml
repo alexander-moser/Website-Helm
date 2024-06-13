@@ -7,6 +7,7 @@ spec:
   selector:
     matchLabels:
       app: angular-app
+      app.kubernetes.io/name: angular-app
       app.kubernetes.io/instance: release-name
   template:
     metadata:
