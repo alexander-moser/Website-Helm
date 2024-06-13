@@ -1,0 +1,20 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: ingress-nginx
+  namespace: ingress-nginx
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-internal: "true"
+  labels:
+    app.kubernetes.io/name: website-helm-ing
+    app.kubernetes.io/part-of: website-helm-ing
+spec:
+  externalTrafficPolicy: Cluster
+  type: LoadBalancer
+  selector:
+    app.kubernetes.io/name: website-helm-ing
+    app.kubernetes.io/part-of: website-helm-ing
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
