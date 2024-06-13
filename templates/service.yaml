@@ -12,7 +12,7 @@ spec:
   type: NodePort
   ports:
     - port: 80
-      nodePort: 4200
+      nodePort: 31000
       protocol: TCP
   selector:
     app: angular-app
