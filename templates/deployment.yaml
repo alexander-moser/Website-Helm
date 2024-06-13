@@ -6,15 +6,19 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      app: angular-app
+      app.kubernetes.io/name: angular-app
+      app.kubernetes.io/instance: release-name
   template:
     metadata:
       labels:
         app: angular-app
     spec:
+      serviceAccountName: website-helm-svc
       containers:
         - name: angular-app
           image: "ghcr.io/alexander-moser/website:main"
           ports:
-            - containerPort: 4200
+            - name: http
+              containerPort: 4200
+              protocol: TCP
       automountServiceAccountToken: false

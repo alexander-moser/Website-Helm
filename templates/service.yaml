@@ -14,4 +14,5 @@ spec:
     - port: 80
       targetPort: 4200
   selector:
-    app: angular-app
+    app.kubernetes.io/name: angular-app
+    app.kubernetes.io/instance: release-name
