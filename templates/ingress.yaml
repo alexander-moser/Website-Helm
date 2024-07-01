@@ -13,7 +13,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: almos.io
+    - host: "almos.io"
       http:
         paths:
           - path: /
